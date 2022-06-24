@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Calculator</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+    <div class="container">
+    <h2>Length Converter</h2>
+    <p>Type a value to Convert</p>
+
+    <p>
+        <label>Centimeters</label>
+        <input id="inputcm" type="number" placeholder="cm" oninput="cm(this.value)"
+            >
+    </p>
+    <p>cm: <span id="outputcm"></span></p>
+
+    <p>
+        <label>Meters</label>
+        <input id="inputm" type="number" placeholder="m" oninput="m(this.value)"
+      >
+    </p>
+    <p>m: <span id="outputm"></span></p>
+
+    <p>
+        <label>Kilometers</label>
+        <input id="inputkm" type="number" placeholder="km" oninput="km(this.value)"
+        >
+    </p>
+    <p>km: <span id="outputkm"></span></p>
+
+    <script>
+        function cm(valNum) {
+            document.getElementById("outputcm").innerHTML = valNum * 1;
+            document.getElementById("outputm").innerHTML = valNum / 100;
+            document.getElementById("outputkm").innerHTML = valNum / 100000;
+        }
+
+        function m(valNum) {
+            document.getElementById("outputcm").innerHTML = valNum * 100;
+            document.getElementById("outputm").innerHTML = valNum / 1;
+            document.getElementById("outputkm").innerHTML = valNum / 1000;
+        }
+        
+        function km(valNum) {
+            document.getElementById("outputcm").innerHTML = valNum * 100000;
+            document.getElementById("outputm").innerHTML = valNum * 1000;
+            document.getElementById("outputkm").innerHTML = valNum * 1 ;
+        }
+
+    </script>
+    </div>
+</body>
+
+</html>
